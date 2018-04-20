@@ -1,12 +1,30 @@
 require './lib/juego.rb'
 describe Juego do 
-	it "jugardor escribe a y la entra muestra _a_a" do 
+	it "Jugador escribe la letra S y la encuentra, muestra S----" do 
 		juego=Juego.new 
-		result = juego.adivina "a"
-		expect(result).to eq "_a_a"
+		result = juego.adivina "S"
+		expect(result).to eq "S----"
+	end
+	it "Jugador escribe las letras SU y las encuentra, muestra S--U-" do 
+		juego=Juego.new 
+		juego.adivina "S"
+		result = juego.adivina "U"
+		expect(result).to eq "S--U-"
+	end
+	it "Jugador escribe las letras SUX y encuentra las dos primeras, muestra S--U-" do 
+		juego=Juego.new 
+		juego.adivina "S"
+		juego.adivina "U"
+		result = juego.adivina "X"
+		expect(result).to eq "S--U-"
+	end
+	it "Jugador escribe las letras SCRUM y las encuentra, muestra SCRUM" do 
+		juego=Juego.new 
+		juego.adivina "S"
+		juego.adivina "C"
+		juego.adivina "R"
+		juego.adivina "U"
+		result = juego.adivina "M"
+		expect(result).to eq "SCRUM"
 	end
 end
-
-#"jugardor escribe c y la entra muestra ca_a"
-#"jugador escribe x y no la encuentra en casa muestra ca_a"
-#"jugador escibre s y la encuentra muestra muestra casa"
