@@ -1,10 +1,22 @@
 class Juego
 
 	def initialize 
-		@palabra = "CASA"
-		@palabra_adivinada = ""
+		@palabra = ["S","C","R","U","M"]
+		@palabra_adivinada = ["-","-","-","-","-"]
 	end
 	def adivina letra
-		"_a_a"
+		if @palabra.to_s.include? letra
+			posicion = 0
+			@palabra.each do |item|
+				if item.eql? letra
+					@palabra_adivinada[posicion] = letra					
+				end
+				posicion += 1
+			end
+
+			return @palabra_adivinada.join ""
+		else
+			@palabra_adivinada.join ""
+		end
 	end
 end
