@@ -2,8 +2,9 @@ require 'sinatra'
 require './config'
 require './lib/juego.rb'
 get '/' do
-end 
+erb :index
+end
 
-get '/juego' do
-	erb :juego
+post '/iniciarJuego' do 
+erb :iniciarJuego
 end

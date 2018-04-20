@@ -5,6 +5,6 @@ Feature:
 	Para saber la cantidad de caracteres
 
 Scenario: debe mostrar lineas de la palabra oculta "
-	Given que abri el juego
+	Given inicie un nuevo juego
 	Then debo ver "-----"
 #debo ponder ver todos los espacios a digitar de la palabra oculta
