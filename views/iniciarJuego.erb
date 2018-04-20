@@ -32,15 +32,15 @@ float: left;
 	<h2 class="espacios"><%= session["palabraOculta"] %></h2>
 <div id="letras">
 		<%
-		letras = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-		letras.each do |item|
+		letras = session["letras"]
+		letras.each do |text,value|
 			disabled = ""
-			if session['letrasUsadas'].index(item)
+			if value.eql? "S"
 				disabled = "disabled"
 			end
 			%>		
-	<form action="/enviarLetra/<%= item %>" method="post"> 
-		<input type="submit" value="<%= item %>" <%= disabled %> >
+	<form action="/enviarLetra/<%= text %>" method="post"> 
+		<input type="submit" value="<%= text %>" <%= disabled %> >
 	</form>
 		<%
 		end
