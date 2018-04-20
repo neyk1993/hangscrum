@@ -6,14 +6,14 @@
 <body>
 	<div>
 	<h2>-----</h2>
-	<h2>ABCDEFGHIJKLMNÑOPQRSTUVWXYZ</h2>
+	<h2></h2>
 		<%
-		#letras = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"}
-		#letras.each do |item|
+		letras = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+		letras.each do |item|
 			%>		
-		<input type="submit" value="">
+		<input type="submit" value="<%= item %>">
 		<%
-		#	end
+		end
 		%>
 	<div>
 </body>

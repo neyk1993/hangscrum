@@ -8,7 +8,5 @@ And debo ver "aqui podras poner a prueba tu conocimiento en Scrum"
 
 Scenario: Al iniciar el juego debo visualizar el tablero de letras del abecedario
 Given inicie un nuevo juego
-Then debo ver "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ"
-
-
-
+Then debo ver los botones "A"
+And debo ver los botones "B"
