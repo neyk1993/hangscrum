@@ -2,19 +2,40 @@
 <html>
 <head>
 	<title></title>
+	<style>
+	body {
+		text-align: center;
+		padding-top: 100px;
+	}
+	input {
+		font-size: 25px;
+		margin: 10px;
+		width: 40px;
+	}
+	.espacios {
+		font-size: 55px;
+		color: blue;
+		letter-spacing: 10px;
+		text-decoration: uppercase;
+	}
+	#letras {
+		width: 33%;
+		margin: 0 auto;
+	}
+	</style>
 </head>
 <body>
-	<div>
-	<h2>-----</h2>
-	<h2></h2>
+	<h2 class="espacios">-----</h2>
+
+	<div id="letras">	
 		<%
-		letras = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+		letras = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 		letras.each do |item|
 			%>		
 		<input type="submit" value="<%= item %>">
 		<%
 		end
 		%>
-	<div>
+	</div>
 </body>
 </html>
