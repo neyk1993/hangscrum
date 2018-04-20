@@ -34,14 +34,17 @@ float: left;
 		<%
 		letras = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 		letras.each do |item|
+			disabled = ""
+			if session['letrasUsadas'].index(item)
+				disabled = "disabled"
+			end
 			%>		
 	<form action="/enviarLetra/<%= item %>" method="post"> 
-		<input type="submit" value="<%= item %>">
+		<input type="submit" value="<%= item %>" <%= disabled %> >
 	</form>
 		<%
 		end
 		%>
 		</div>
-		<h2> <%= session['letrasUsadas'] %> </h2>
 </body>
 </html>
