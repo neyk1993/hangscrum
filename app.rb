@@ -8,3 +8,8 @@ end
 post '/iniciarJuego' do 
 erb :iniciarJuego
 end
+
+post '/enviarLetra' do
+	puts params
+	erb :iniciarJuego
+end

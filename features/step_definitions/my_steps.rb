@@ -14,3 +14,7 @@ Given(/^inicie un nuevo juego$/) do
   step "que abri el juego"
   click_button('Iniciar')
 end
+
+Given(/^seleccione la letra "([^"]*)"$/) do |texto|
+  click_button(texto)
+end

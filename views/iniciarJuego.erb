@@ -22,20 +22,25 @@
 		width: 33%;
 		margin: 0 auto;
 	}
+	form {
+		display: inline-block;
+float: left;
+	}
 	</style>
 </head>
 <body>
 	<h2 class="espacios">-----</h2>
-
-	<div id="letras">	
+<div id="letras">
 		<%
 		letras = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 		letras.each do |item|
 			%>		
+	<form action="enviarLetra" method="post"> 
 		<input type="submit" value="<%= item %>">
+	</form>
 		<%
 		end
 		%>
-	</div>
+		</div>
 </body>
 </html>
