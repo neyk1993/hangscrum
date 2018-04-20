@@ -22,20 +22,29 @@
 		width: 33%;
 		margin: 0 auto;
 	}
+	form {
+		display: inline-block;
+float: left;
+	}
 	</style>
 </head>
 <body>
-	<h2 class="espacios">-----</h2>
-
-	<div id="letras">	
+	<h2 class="espacios"><%= session["palabraOculta"] %></h2>
+<div id="letras">
 		<%
 		letras = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 		letras.each do |item|
+			disabled = ""
+			if session['letrasUsadas'].index(item)
+				disabled = "disabled"
+			end
 			%>		
-		<input type="submit" value="<%= item %>">
+	<form action="/enviarLetra/<%= item %>" method="post"> 
+		<input type="submit" value="<%= item %>" <%= disabled %> >
+	</form>
 		<%
 		end
 		%>
-	</div>
+		</div>
 </body>
 </html>
