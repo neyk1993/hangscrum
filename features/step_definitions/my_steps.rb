@@ -8,6 +8,6 @@ end
 
 
 Given(/^inicie un nuevo juego$/) do
-  visit '/'
+  step "que abri el juego"
   click_button('Iniciar')
 end
