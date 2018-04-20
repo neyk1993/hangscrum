@@ -1,5 +1,5 @@
 class Juego
-
+	attr_reader :palabra_adivinada
 	def initialize 
 		@palabra = ["S","C","R","U","M"]
 		@palabra_adivinada = ["-","-","-","-","-"]

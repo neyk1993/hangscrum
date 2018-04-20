@@ -29,18 +29,19 @@ float: left;
 	</style>
 </head>
 <body>
-	<h2 class="espacios">-----</h2>
+	<h2 class="espacios"><%= session["palabraOculta"] %></h2>
 <div id="letras">
 		<%
 		letras = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 		letras.each do |item|
 			%>		
-	<form action="enviarLetra" method="post"> 
+	<form action="/enviarLetra/<%= item %>" method="post"> 
 		<input type="submit" value="<%= item %>">
 	</form>
 		<%
 		end
 		%>
 		</div>
+		<h2> <%= session['letrasUsadas'] %> </h2>
 </body>
 </html>
