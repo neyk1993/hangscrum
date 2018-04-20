@@ -27,4 +27,10 @@ describe Juego do
 		result = juego.adivina "M"
 		expect(result).to eq "SCRUM"
 	end
+	it "Jugador 2 veces la letra u debe buscando en SCRUM debe mustrar U y decir que u no esta desable" do 
+		juego=Juego.new 
+		juego.adivina "U"
+		result = juego.obtenerletras
+		expect(result["U"]).to eq "S"
+	end
 end

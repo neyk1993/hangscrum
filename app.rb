@@ -8,15 +8,13 @@ end
 
 post '/iniciarJuego' do
 	session['juego'] = Juego.new
-	session['letrasUsadas'] = []
 	session['intentos'] = 6
+	session['letras'] = session['juego'].letras
 	session["palabraOculta"] = session['juego'].palabra_adivinada.join("")
 	erb :iniciarJuego
 end
 
 post '/enviarLetra/:letra' do
-	session['letrasUsadas'].push(params['letra'])
-	
 	result = session['juego'].adivina(params['letra'])
 	if result == session["palabraOculta"]
 		session['intentos'] -= 1
